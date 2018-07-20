@@ -1,14 +1,25 @@
 def method1(a, &block)
-    method2(b, block)
+    print a
+    #method2(a, block)
 end
 
-def method2(b, &b)
+def method2()
     begin
-    exception
-rescue
-
+        print "begin\n"
+        return 1
+    rescue
+        print "rescue\n"
+        2
+    else
+        print "else\n"
+        break 3
+    ensure
+        print "ensure\n"
+        4
+    end
 end
 
-
-block = Proc.new {|a| a+1}
-method(a, )
+b = 10
+method1(b) {|x| print x+1}
+a = method2()
+print a
