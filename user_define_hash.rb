@@ -67,4 +67,7 @@ puts h[b1]
 puts [1,2,3] === [1,2,3]
 #print "\n #{b1.hash} #{b2.hash}"
 print "c1 is eql to c2?: #{c1.eql?c2} "
-print h[c2]
+print "\nhash value: #{h[c2]}"
+
+# add has_key to compare
+print "\nh has key?  #{h.has_key?c2}"
