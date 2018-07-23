@@ -12,3 +12,4 @@ end
 
 r= -9..0
 r.each {|a| print a}
+

@@ -1,16 +1,17 @@
 class Discrete_Point
+    attr_accessor :x, :y
     def initialize(x,y)
         @x, @y = x, y
     end
 
     def succ
-        Discrete_Point.new(@x+1, @y+1)
+        Discrete_Point.new(@x+2, @y+2)
     end
 
     def <=> (obj)
-        if (self.x > obj.x) && (self.y > obj.y) then return 1
-        if (self.x == obj.x) && (self.y == obj.y) then return 0
-        if (self.x < obj.x) && (self.y < obj.y) then return -1
+        return 1 if (self.x > obj.x) && (self.y > obj.y)
+        return 0 if (self.x == obj.x) && (self.y == obj.y) 
+        return -1 if (self.x < obj.x) && (self.y < obj.y)
     end
 
     def to_s
@@ -19,6 +20,8 @@ class Discrete_Point
 end
 
 p1 = Discrete_Point.new(1,1)
-p2 = Discrete_Point.new(10,10)
-#r = p1..p2
-print p1.respond_to?
+p2 = Discrete_Point.new(9,9)
+p3 = Discrete_Point.new(2,2)
+
+puts (p1..p2).include?(p3)
+puts (p1..p2).cover?(p3)
