@@ -19,7 +19,12 @@ class A
 
     def equal?(o)
         puts "#{self.name} use equal? compare to #{o.name}"
-        return @a.equal?o.a
+        100
+    end
+
+    def object_id
+        puts "using object id"
+        return @a.object_id
     end
 
     def hash
@@ -45,6 +50,7 @@ puts h1[str]
 puts
 
 a1.a = 5
+
 puts h1[a1]
 puts
 puts h1[a2]
@@ -72,3 +78,6 @@ h[str] # => nil
 
 print FIXNUM_MIN
 =end
+
+puts a1.equal?a2
+
