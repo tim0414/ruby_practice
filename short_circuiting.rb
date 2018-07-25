@@ -11,14 +11,13 @@ $a = 0
 def be_true(value)
     $a+=1
     print "#{value}.true #{$a}\n"
-    true
-    "#{value}.true #{$a}\n"
+    "[#{value}.true, $a: #{$a}]"
 end
 
 def be_false(value)
     $a+=1
     print "#{value}.false #{$a}\n"
-    false
+    nil
 end
 
 #be_true
@@ -26,22 +25,88 @@ end
 
 $a = 0
 result1 = be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_true(5) or be_false(6)
-print "result: #{result1}, $a: #{$a}\n"
-puts 
-$a = 0
-result2 = be_true(1) || be_false(2) && be_true(3) 
-print "result: #{result2}, $a: #{$a}\n"
+print "result1: #{result1}, $a: #{$a}\n"
 
 puts 
 $a = 0
-result3 = be_false(1) and be_true(2) or be_false(3)
-print "result: #{result3}, $a: #{$a}\n"
+result2 = be_true(1) or be_true(2) and be_false(3) 
+print "result2: #{result2}, $a: #{$a}\n"
+
+puts 
+$a = 0
+result3 = be_false(1) and be_false(2) or be_true(3)
+print "result3: #{result3}, $a: #{$a}\n"
+
+puts 
+$a = 0
+result4 = be_true(1) or be_false(2) && be_true(3)
+print "result4: #{result4}, $a: #{$a}\n"
+
+puts
+$a = 0
+result5 = true or (be_true(10) && (a+=1))
+print "result5: #{result5}\n"
+
+puts
+$a = 0
+result6 = be_false(1) or be_true(2) && be_true(3)
+print "result6: #{result6}, $a: #{$a}\n"
+
+puts
+$a = 0
+result7 = be_true(1) or (be_false(2) and be_true(3))
+print "result7: #{result7}, $a: #{$a}\n"
+
+puts
+$a = 0
+result8 = be_true(1) or be_false(2) and be_true(3)
+print "result8: #{result8}, $a: #{$a}\n"
+
+puts
+$a = 0
+result9 = be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_false(5) or be_true(6)
+print "result9: #{result9}, $a: #{$a}\n"
+
+puts
+$a = 0
+result10 = be_true(1) or be_false(2) and be_false(3) or be_false(4) and be_false(5) or be_true(6)
+print "result10: #{result10}, $a: #{$a}\n"
 
 
+puts
+$a = 0
+result11 = be_true(1) or be_false(2) and be_true(3) or (be_true(4) && be_false(5)) or be_true(6)
+print "result11: #{result11}, $a: #{$a}\n"
+
+puts
+$a = 0
+result13 = be_true(1) or be_false(2) and be_true(3) or be_true(4) && be_false(5) or be_true(6)
+print "result13: #{result13}, $a: #{$a}\n"
+
+puts
+$a = 0
+result14 = be_true(1) or be_false(2) and be_true(3) or be_true(4) and be_false(5) or be_true(6)
+print "result14: #{result14}, $a: #{$a}\n"
+
+puts
+$a = 0
+result12 = be_true(1) or be_false(2) and be_false(3) or be_false(4) && be_false(5) or be_true(6)
+print "result12: #{result12}, $a: #{$a}\n"
+
+puts
+$a = 0
+result15 = be_true(1) or be_true(3) and be_false(2)
+print "result15: #{result15}, $a: #{$a}\n"
+
+puts
+$a = 0
+result16 = be_true(1) or be_true(3) && be_false(2)
+print "result16: #{result16}, $a: #{$a}\n"
 
 #foo =42 && foo/ 2
 #puts foo==nil
 
+=begin
 print (1..9).include?(2.5)
 print ("a".."z").cover?("cc")
 # x and y # => if x then y else false
@@ -68,3 +133,4 @@ b=0
 print (b+=1) or (b+=1) and (b+=1)
 puts
 print b
+=end

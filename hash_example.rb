@@ -39,6 +39,7 @@ a2 = A.new(9, "a2")
 a3 = A.new(8, "a3")
 a4 = A.new(7, "a4")
 a5 = A.new(10, "a5")
+a6 = A.new(6, "a6")
 
 str = "string hash key"
 
@@ -49,8 +50,11 @@ puts h1[str]
 
 puts
 
+print "#{h1}\n"
 a1.a = 5
-
+print "#{h1}\n"
+puts h1[a6]
+puts
 puts h1[a1]
 puts
 puts h1[a2]
@@ -81,3 +85,30 @@ print FIXNUM_MIN
 
 puts a1.equal?a2
 
+str = "abc"
+arr = [1,2,3]
+h2 = {str => "string hash value", arr => "arr hash value"}
+
+
+#puts h2[str]
+
+print "before string modify: #{h2}\n"
+str[1] = "B"
+print "after string modify: #{h2}\n"
+str2 = "abc"
+puts h1[str]
+puts h2[str2]
+
+puts
+
+arr[1] = 4
+arr2 = [1,4,3]
+arr3 = [1,2,3]
+print "after modified arr: #{h2}"
+print "result: [#{h2[arr]}, #{h2[arr2]}, #{h2[arr3]}]\n" 
+h2.rehash
+print "after rehash: #{h2}\n"
+print "result: #{h2[arr]}\n"
+
+h3 = {a1=>"symbol hash value"}
+print h3
