@@ -25,5 +25,8 @@ p1 = Discrete_Point.new(1,1)
 p2 = Discrete_Point.new(9,9)
 p3 = Discrete_Point.new(2,2)
 
-#puts (p1..p2).include?(p3) # => false
+puts (p1..p2).class
 puts (p1..p2).cover?(p3) # => true
+puts (p1..p2).include?(p3) # => can't iterate from Discrete_Point (TypeError)
+
+puts p1>p3

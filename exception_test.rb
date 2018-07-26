@@ -1,16 +1,18 @@
-require 'open-uri'
-page = "podcasts"
-file_name = "#{page}.html"
-web_page = open("http://pragprog.com/#{page}")
-output = File.open(file_name, "w")
-begin
-    while line = web_page.gets
-        output.puts line
+
+def fac(n)
+    if n<1
+        raise ArgumentError, "expected argument >= 1. Got #{n}",caller
     end
-    output.close
-rescue Exception
-    STDERR.puts "Failed to download #{page}: #{$!}"
-    output.close
-    File.delete(file_name)
-    raise
 end
+
+begin
+    a = fac(0)
+rescue => ex
+    print "#{ex.class}, #{ex.message}\n"
+    print "#{$!.class}, #{$!.message}\n"
+end
+
+print a.class
+
+print "over"  # => over
+
