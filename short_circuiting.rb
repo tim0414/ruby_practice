@@ -9,9 +9,8 @@ false and a+=1
 
 $a = 0
 def be_true(value)
-    $a+=1
     print "#{value}.true #{$a}\n"
-    "[#{value}.true, $a: #{$a}]"
+    "#{value}.true, $a: #{$a}"
 end
 
 def be_false(value)
@@ -102,6 +101,14 @@ puts
 $a = 0
 result16 = be_true(1) or be_true(3) && be_false(2)
 print "result16: #{result16}, $a: #{$a}\n"
+
+puts
+$a = 0
+result = be_true(1) || be_false(2) && be_true(3)
+print "result: #{result}, $a: #{$a}\n"
+
+puts
+
 
 #foo =42 && foo/ 2
 #puts foo==nil

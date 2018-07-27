@@ -24,7 +24,7 @@ class A
 
     def object_id
         puts "using object id"
-        return @a.object_id
+        100
     end
 
     def hash
@@ -45,6 +45,7 @@ str = "string hash key"
 
 h1 = {a1=>"a1 hash value", a3 => "a3 hash value", str => "str hash value"}
 
+#puts "!!!!!", h1.include?(a1)
 
 puts h1[str]
 
@@ -81,7 +82,7 @@ str[0] = "aa"
 h[str] # => nil
 
 print FIXNUM_MIN
-=end
+
 
 puts a1.equal?a2
 
@@ -112,3 +113,4 @@ print "result: #{h2[arr]}\n"
 
 h3 = {a1=>"symbol hash value"}
 print h3
+=end
