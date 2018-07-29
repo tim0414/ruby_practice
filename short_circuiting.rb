@@ -9,6 +9,7 @@ false and a+=1
 
 $a = 0
 def be_true(value)
+    $a+=1
     print "#{value}.true #{$a}\n"
     "#{value}.true, $a: #{$a}"
 end
@@ -23,22 +24,27 @@ end
 #print  "$a: #{$a}\n"
 
 $a = 0
-result1 = be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_true(5) or be_false(6)
+result1 = (be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_true(5) or be_false(6))
 print "result1: #{result1}, $a: #{$a}\n"
 
 puts 
 $a = 0
-result2 = be_true(1) or be_true(2) and be_false(3) 
-print "result2: #{result2}, $a: #{$a}\n"
-
-puts 
-$a = 0
-result3 = be_false(1) and be_false(2) or be_true(3)
+result3 = (be_true(1) or be_false(2) and be_true(3))
 print "result3: #{result3}, $a: #{$a}\n"
 
 puts 
 $a = 0
-result4 = be_true(1) or be_false(2) && be_true(3)
+result2 = (be_true(1) or be_false(2) and be_true(3))
+print "result2: #{result2}, $a: #{$a}\n"
+
+puts 
+$a = 0
+result3 = (be_false(1) and be_false(2) or be_true(3))
+print "result3: #{result3}, $a: #{$a}\n"
+
+puts 
+$a = 0
+result4 = (be_true(1) or be_false(2) && be_true(3))
 print "result4: #{result4}, $a: #{$a}\n"
 
 puts
@@ -48,58 +54,58 @@ print "result5: #{result5}\n"
 
 puts
 $a = 0
-result6 = be_false(1) or be_true(2) && be_true(3)
+result6 = (be_false(1) or be_true(2) && be_true(3))
 print "result6: #{result6}, $a: #{$a}\n"
 
 puts
 $a = 0
-result7 = be_true(1) or (be_false(2) and be_true(3))
+result7 = (be_true(1) or (be_false(2) and be_true(3)))
 print "result7: #{result7}, $a: #{$a}\n"
 
 puts
 $a = 0
-result8 = be_true(1) or be_false(2) and be_true(3)
+result8 = (be_true(1) or be_false(2) and be_true(3))
 print "result8: #{result8}, $a: #{$a}\n"
 
 puts
 $a = 0
-result9 = be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_false(5) or be_true(6)
+result9 = (be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_false(5) or be_true(6))
 print "result9: #{result9}, $a: #{$a}\n"
 
 puts
 $a = 0
-result10 = be_true(1) or be_false(2) and be_false(3) or be_false(4) and be_false(5) or be_true(6)
+result10 = (be_true(1) or be_false(2) and be_false(3) or be_false(4) and be_false(5) or be_true(6))
 print "result10: #{result10}, $a: #{$a}\n"
 
 
 puts
 $a = 0
-result11 = be_true(1) or be_false(2) and be_true(3) or (be_true(4) && be_false(5)) or be_true(6)
+result11 = (be_true(1) or be_false(2) and be_true(3) or (be_true(4) && be_false(5)) or be_true(6))
 print "result11: #{result11}, $a: #{$a}\n"
 
 puts
 $a = 0
-result13 = be_true(1) or be_false(2) and be_true(3) or be_true(4) && be_false(5) or be_true(6)
+result13 = (be_true(1) or be_false(2) and be_true(3) or be_true(4) && be_false(5) or be_true(6))
 print "result13: #{result13}, $a: #{$a}\n"
 
 puts
 $a = 0
-result14 = be_true(1) or be_false(2) and be_true(3) or be_true(4) and be_false(5) or be_true(6)
+result14 = (be_true(1) or be_false(2) and be_true(3) or be_true(4) and be_false(5) or be_true(6))
 print "result14: #{result14}, $a: #{$a}\n"
 
 puts
 $a = 0
-result12 = be_true(1) or be_false(2) and be_false(3) or be_false(4) && be_false(5) or be_true(6)
+result12 = (be_true(1) or be_false(2) and be_false(3) or be_false(4) && be_false(5) or be_true(6))
 print "result12: #{result12}, $a: #{$a}\n"
 
 puts
 $a = 0
-result15 = be_true(1) or be_true(3) and be_false(2)
+result15 = (be_true(1) or be_true(3) and be_false(2))
 print "result15: #{result15}, $a: #{$a}\n"
 
 puts
 $a = 0
-result16 = be_true(1) or be_true(3) && be_false(2)
+result16 = (be_true(1) or be_true(3) && be_false(2))
 print "result16: #{result16}, $a: #{$a}\n"
 
 puts
@@ -108,6 +114,10 @@ result = be_true(1) || be_false(2) && be_true(3)
 print "result: #{result}, $a: #{$a}\n"
 
 puts
+
+$a = 0
+result = (be_true(1) || be_false(2)) && be_true(3) 
+print "result: #{result}, $a: #{$a}\n"
 
 
 #foo =42 && foo/ 2

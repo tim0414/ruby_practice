@@ -12,6 +12,7 @@ def method2()
         begin
             print "begin\n"
             #raise "begin error"
+           
             return 1
         rescue
             print "rescue\n"
@@ -29,13 +30,41 @@ end
 
 begin
     a = method2()
+    raise
     print "after calling method2\n"
 rescue => ex
     print "outer exception handling #{ex.class}, #{ex.message}"
+    a = ex.backtrace
+    print a
 end
 
 puts a
 
 method1(a)
 
+begin
+    raise
+rescue => ex
+    puts
+    print "exception class: #{ex.class}\n"
+    print "exception message #{ex.message}\n"
+    print "backtrace arry #{ex.backtrace}\n"
+    print $!.class
+end
+
+print $!.class
+
+
     
+def accessor_pair(initialValue)
+    value = initialValue
+    getter = lambda{value}
+    setter = lambda{|x| value = x}
+    return getter, setter
+end
+
+getX, setX = accessor_pair(0)
+puts getX[]
+setX[10]
+puts getX[]
+print "value: #{value}"

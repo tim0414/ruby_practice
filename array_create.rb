@@ -6,9 +6,15 @@ class A
     end
 
     def ==(o)
-        puts "using equal?\n"
+        puts "using ==\n"
         @a == o.a
     end
+
+    def equal?(o)
+        puts "using equal?"
+        @a == o.a
+    end
+
 end
 
 
@@ -20,10 +26,12 @@ a5 = A.new(13, "a5")
 a6 = A.new(11, "a6")
 
 arr1 = [a1, a2, a3, a4, a5, a6, a1]
+print arr1, "\n"
 arr2 = [a1, a3]
 arr3 = arr1 - arr2  # => [a2, a4, a5, a6]
 arr4 = arr1 & arr2  # => [a1, a3]
 arr5 = arr1 | arr2  # => [a1, a2, a3, a4, a5, a6]
+
 
 print arr1
 puts
@@ -32,6 +40,7 @@ puts
 print arr4
 puts
 print arr5
+
 
 puts
 arr1.delete(a1)

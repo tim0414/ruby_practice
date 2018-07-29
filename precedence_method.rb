@@ -26,3 +26,15 @@ else
     puts "b"   
 end
 
+if be_true 1
+    print "a"
+end
+
+def method
+    yield 10, 100
+end
+
+method {|x| print x; print "start block"}
+puts
+puts
+print be_true 2

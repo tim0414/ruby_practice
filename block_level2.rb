@@ -17,6 +17,19 @@ def level2(a, &block)
     begin
         puts "level2 begin"
         raise if a==2
+        #block.call(100)
+        level3(a, &block)
+        "level2 begin return"
+    rescue => ex
+        puts "#{ex.class}, level2 rescue"
+        "level2 rescue return"
+    end
+end
+
+def level3(a, &block)
+    begin
+        puts "level2 begin"
+        raise if a==2
         block.call(100)
         "level2 begin return"
     rescue => ex

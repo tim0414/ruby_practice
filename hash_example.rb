@@ -29,7 +29,7 @@ class A
 
     def hash
         puts "#{self.name} calculate hash code"
-        10
+        @a.hash
     end
 
 end
@@ -54,7 +54,18 @@ puts
 print "#{h1}\n"
 a1.a = 5
 print "#{h1}\n"
+puts h1[a1]
+puts "start rehash"
+h1.rehash
+puts "after rehash"
+
+puts h1[a1]
+
+
 puts h1[a6]
+
+puts h1[a6]
+=begin
 puts
 puts h1[a1]
 puts
@@ -63,6 +74,7 @@ puts
 puts h1[a4]
 puts 
 puts h1[a5]
+=end
 
 #h = Hash.new(10)
 #h["one"] = 1
@@ -86,10 +98,28 @@ print FIXNUM_MIN
 
 puts a1.equal?a2
 
+=end
+
+class Array
+    def eql?(o)
+        puts "array using eql?"
+        self==o
+    end
+
+end
+    
+
+
+
 str = "abc"
 arr = [1,2,3]
+arr2 = [1,2,3]
 h2 = {str => "string hash value", arr => "arr hash value"}
 
+puts h2[arr2]
+puts h2[arr]
+
+=begin
 
 #puts h2[str]
 
