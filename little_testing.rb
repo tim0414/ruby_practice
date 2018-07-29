@@ -16,3 +16,6 @@ a = method(arr)
 print "arr2: #{$arr2}"
 
 puts "abc"===/^a/
+
+print global_variables
+print local_variables

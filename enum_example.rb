@@ -33,6 +33,7 @@ end
 p = Point.new(1,2)
 p.each {|x| print "#{x} "}
 iter = p.each
+print iter
 
 s = "hello"
 iter = s.to_enum(:each_char)
