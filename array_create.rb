@@ -1,32 +1,50 @@
+
 class A
     attr_accessor :a
-    def initialize(a, name)
+    def initialize(a)
         @a = a
-        @name = name
     end
-
     def ==(o)
-        puts "using ==\n"
-        @a == o.a
+        puts "using =="
+        super(o)
     end
 
     def equal?(o)
         puts "using equal?"
-        @a == o.a
+        super(o)
     end
 
+    def eql?(o)
+        puts "using eql?"
+        super(o)
+    end
+
+    def ===(o)
+        puts "using ==="
+        super(o)
+    end
+
+    def object_id
+        puts "using object id"
+        super(o)
+    end
+
+    def <=>(o)
+        puts "using <=>"
+        super(o)
+    end
 end
 
 
-a1 = A.new(10, "a1")
-a2 = A.new(10, "a2")
-a3 = A.new(11, "a3")
-a4 = A.new(12, "a4")
-a5 = A.new(13, "a5")
-a6 = A.new(11, "a6")
+a1 = A.new(10)
+a2 = A.new(10)
+a3 = A.new(11)
+a4 = A.new(12)
+a5 = A.new(13)
+a6 = A.new(11)
 
 arr1 = [a1, a2, a3, a4, a5, a6, a1]
-print arr1, "\n"
+
 arr2 = [a1, a3]
 arr3 = arr1 - arr2  # => [a2, a4, a5, a6]
 arr4 = arr1 & arr2  # => [a1, a3]
@@ -43,7 +61,7 @@ print arr5
 
 
 puts
-arr1.delete(a1)
+#arr1.delete(a1)
 
 
 =begin
