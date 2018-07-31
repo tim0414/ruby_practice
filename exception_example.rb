@@ -3,7 +3,7 @@ def method(n)
     begin
         print "begin block execute\n"
         raise if n==0
-         "begin"
+        "begin"
     rescue => exception
         print "rescue block execute\n"
          "rescue"
@@ -38,4 +38,10 @@ def test
     p.call                  # prints "entering proc" and raise LocalJumpError!
     puts "existing method"  # this line is never executed
 end
-test
+#test
+
+p = Proc.new {puts "proc using"; return}
+def a(p)
+    p.call
+end
+a(p)
