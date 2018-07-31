@@ -112,10 +112,11 @@ class A
     include Comparable
 end
 
+puts String==="abc" # => true
+puts Fixnum===100 # => true
+
 puts 100.is_a?(Fixnum) # => true
 puts "abc".is_a?(String) # => true
-puts String === "abc" # => true
-puts Fixnum===100
 
 puts "abc".is_a?(Comparable) # => true
 puts Comparable === "abc" # => true

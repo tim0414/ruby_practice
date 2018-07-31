@@ -47,7 +47,6 @@ class Point
     ORIGIN = Point.new(0,0)
 end
 
-p = Point.new(1,1)
-puts Point::ORIGIN # => (0,0)
+Point::ORIGIN # => (0,0)
 Point::UNIT_X = Point.new(1,0)
-puts Point::UNIT_X
+Point::UNIT_X # => (1,0)

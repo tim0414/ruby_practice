@@ -64,7 +64,8 @@ def accessor_pair(initialValue)
 end
 
 getX, setX = accessor_pair(0)
-puts getX[]
+puts getX[] # => 0
 setX[10]
-puts getX[]
-print "value: #{value}"
+puts getX[] # => 10
+print "value: #{value}" 
+# => undefined local variable or method `value'
