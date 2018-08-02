@@ -52,6 +52,7 @@ def level3(a, &block)
 end
 =end
 
+
 result1 = level1(0){|x|  break 100*x}
 puts "final result: #{result1}"    
 
