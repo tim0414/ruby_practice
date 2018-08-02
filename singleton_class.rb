@@ -36,5 +36,3 @@ puts A.info
 puts A.singleton_info
 puts Module.superclass
 puts Class.superclass
-a = 10
-print a

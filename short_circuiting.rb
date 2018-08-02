@@ -8,21 +8,21 @@ false and a+=1
 #puts a # => 0
 
 $a = 0
+
 def be_true(value)
-    $a+=1
-    print "#{value}.true #{$a}\n"
-    "#{value}.true, $a: #{$a}"
+    puts "#{value}.true"
+    "#{value}.true"
 end
 
 def be_false(value)
-    $a+=1
-    print "#{value}.false #{$a}\n"
-    nil
+    puts "#{value}.false"
+    false
 end
 
 #be_true
 #print  "$a: #{$a}\n"
 
+=begin
 $a = 0
 result1 = (be_true(1) or be_false(2) and be_true(3) or be_false(4) and be_true(5) or be_false(6))
 print "result1: #{result1}, $a: #{$a}\n"
@@ -151,3 +151,43 @@ print (b+=1) or (b+=1) and (b+=1)
 puts
 print b
 =end
+
+true || false && true  # => ?
+
+
+result = (be_true(1) or be_false(2) and be_true(3))
+puts "result: #{result}"
+# => 1.true
+# => 3.true
+# => result: 3.true
+puts
+result = be_true(1) || be_false(2) && be_true(3)
+puts "result: #{result}"
+# => 1.true
+# => result: 1.true
+
+puts
+
+result = be_false(1) and be_true(2) or be_true(3)
+puts "result: #{result}"
+# => 1.false
+# => 3.true
+# => result: false
+
+puts
+result = be_true(1) or be_false(2) and be_true(3)
+puts "result: #{result}"
+# => 1.true
+# => 3.true
+# => result: 1.true
+
+a = false
+be_true(1) or a = be_true(2) and be_true(3)
+puts a
+# => 1.true
+# => 3.true
+# => false
+
+puts
+result = (be_false(0) and be_true(1)?be_true(2): be_true(4))
+puts result

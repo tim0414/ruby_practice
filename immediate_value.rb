@@ -31,8 +31,21 @@ end
 0b1111_1111 # Binary representation of 255
 0xFF        # Hexadecimal representation of 255
 
-7/3    # => 2
+7/3    # =>  2
 -7/3   # => -3
+7/-3   # => -3
 -(7/3) # => -2
 
-print 10/0.0
+#10/0 # => ZeroDivisionError
+
+7%3    # =>  1
+-7%3   # =>  2
+7% -3  # => -2
+
+0.4 - 0.3 == 0.1 # Evaluates to false in most implementations
+0.9 - 0.4 == 0.5 # true
+
+0.1 + 0.2 # => 0.30000000000000004
+0.1 + 0.2 == 0.3 # => false
+require 'bigdecimal'
+BigDecimal.new("0.1") + BigDecimal.new("0.2") == 0.3 # => true

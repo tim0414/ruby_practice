@@ -29,6 +29,9 @@ class A
     end 
     class<<self
         attr_accessor :class_instance_var
+        def method2
+            puts "private class method in A"
+        end
     end
     private :private_instance_method
 end
@@ -55,7 +58,7 @@ puts A::CON2 # => aonstant2
 B.class_var = 100
 puts A.class_var # => 100
 
-# class instance variable test
+# class instance variable
 puts A.class_instance_var # => class instance variable
 puts B.class_instance_var # => nil
 B.class_instance_var = 100

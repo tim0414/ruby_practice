@@ -28,9 +28,7 @@ end
 def level3(&b)
     begin
         puts "level3 begin"
-        #yield 0
         level4(&b)
-        #yield 0
     rescue => exception
         puts "level3 rescue: #{exception.class}"
     else
@@ -45,10 +43,6 @@ def level4(&b)
     begin
         puts "level4 begin"
         level5(&b)
-=begin
-    rescue => exception
-        puts "level4 rescue: #{exception.class}"
-=end
     else
         puts "level4 else"
     ensure
@@ -60,10 +54,6 @@ def level5(&b)
     begin
         puts "level5 begin"
         yield (0)
-=begin
-    rescue => exception
-        puts "level5 rescue: #{exception.class}"
-=end
     else
         puts "level5 else"
     ensure
@@ -74,27 +64,27 @@ end
 p = Proc.new do |x|
     puts x
     puts "block execute"
-    #break
+    #break 100
     raise IOError
 end
 l = lambda do |x|
     puts x
     puts "block execute"
-    #break
+    break
     raise IOError
 end
 
 begin
     puts "level0 begin"
-=begin
-    level1 do |x|
-        puts x
+
+    result = level1 do |x|
+        puts "execute block"
         puts "block execute"
-        #break
+        #break 100
         raise ArgumentError
     end
-=end
-    level1(&l)
+    puts "result: #{result}" 
+    
 rescue => exception
     puts "level0 rescue: #{exception.class}"
 else

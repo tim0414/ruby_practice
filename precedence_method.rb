@@ -19,22 +19,10 @@ a = (be_false 1 and be_true 2)
 not be_true 1*2 # => true method: 1
 #defined? be_true 1 # => syntax error
 
-case not(be_false(1))
-when not(be_false(1))
-    puts "a"   # => print a
+case not be_false(1) # => syntax error
+when not be_false(1) # => syntax error
+    puts "a" 
 else
     puts "b"   
 end
 
-if be_true 1
-    print "a"
-end
-
-def method
-    yield 10, 100
-end
-
-method {|x| print x; print "start block"}
-puts
-puts
-print be_true 2

@@ -6,4 +6,6 @@ class Module
     end
 end
 
-String === "abc"
+puts String === "abc"
+# => using module ===
+# => true
