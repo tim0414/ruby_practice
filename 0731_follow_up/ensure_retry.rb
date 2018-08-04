@@ -2,7 +2,6 @@ def method(n)
     begin
         n+=1
         puts "begin"
-        retry if n ==1
         raise 
     rescue => exception
         puts n
