@@ -50,6 +50,10 @@ class Meditator
     def more_experienced?(other_person)
       hours > other_person.hours
     end
+
+    def method(*)
+        puts "a"
+    end
   
     protected
     attr_reader :hours  # We have made the accessor protected
@@ -57,7 +61,8 @@ end
   
 m1 = Meditator.new 3000
 m2 = Meditator.new 5000
-m1.hours # => NoMethodError, protected method `hours' called
+#m1.hours # => NoMethodError, protected method `hours' called
 
-m2.more_experienced? m1  # => true
-m1.more_experienced? m2  # => false
+m1.method(1,2,3,4)
+puts m2.more_experienced? m1  # => true
+puts m1.more_experienced? m2  # => false

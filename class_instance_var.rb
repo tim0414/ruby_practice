@@ -8,6 +8,7 @@ class Point
     # make class instance variable public
     class << self
         attr_accessor :n, :totalX, :totalY
+        @n = 0
     end
 
     def initialize(x,y)
@@ -31,7 +32,21 @@ class Point
     end
 end
 
+class Point3 < Point
+end
 
-
+puts Point3.instance_variable_defined?(:@n)
 print Point.totalX
         
+
+class A
+    @a = 0
+end
+
+class B<A
+end
+
+puts A.instance_variable_defined?(:@a) # => true
+puts B.instance_variable_defined?(:@a) # => false
+A::CON = 10
+puts A.const_defined?(:CON)
