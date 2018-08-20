@@ -1,13 +1,18 @@
 class A
     class<<self
-        def initialize(x,y)
+        def initialize(a,b)
             puts "using class method initialize"
-            @x, @y = x, y
+            @a, @b = a, b
         end
         def get_class_instance_var()
-            [@x, @y]
+            [@a, @b]
+        end
+        def new(a,b)
+            initialize(a,b)
+            super
         end
     end
+
     def initialize(x,y)
         puts "using instance method initialize"
         @x, @y = x, y
@@ -15,19 +20,22 @@ class A
 end
 
 
-A.initialize(10,12)
-puts A.instance_variable_defined?(:@x)
+
+#A.initialize(10,12)
+
+A.new(1,2)
+puts A.instance_variable_defined?(:@a)
 puts A.get_class_instance_var
 
+puts Class.method_defined?(:initialize)
+
 class Class
-    def initialize(x, y)
+    def initialize(x)
         puts "using Class initialize"
-        @x, @y = x, y
+        @x = x
     end
 end
 
-b = Class.new(1,2)
-puts b.name
-B = b
-puts b.name
+B = Class.new(1)
 puts B.instance_variable_defined?(:@x)
+
